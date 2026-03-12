@@ -33,7 +33,9 @@ const RESOURCES: Resource[] = [
     title: 'Color Palette',
     desc: 'Official Nodestream color swatches in ASE, CLR, and CSS formats. Includes brand, neutral, and semantic tokens.',
     cta: 'Download',
-    status: 'coming-soon',
+    status: 'available',
+    href: '/NodeStream-Color-Palette.zip',
+    download: true,
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
         <circle cx="8" cy="8" r="4" stroke="currentColor" strokeWidth="1.5"/>
