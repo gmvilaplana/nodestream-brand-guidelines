@@ -6,6 +6,7 @@ interface Resource {
   cta: string
   status: 'available' | 'coming-soon'
   href?: string
+  download?: boolean
   icon: React.ReactNode
 }
 
@@ -16,7 +17,9 @@ const RESOURCES: Resource[] = [
     title: 'Logo Package',
     desc: 'Full logo suite — primary, secondary, symbol-only. SVG, PNG, and EPS formats for all variants and backgrounds.',
     cta: 'Download',
-    status: 'coming-soon',
+    status: 'available',
+    href: '/NodeStream-Logos.zip',
+    download: true,
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
         <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" strokeWidth="1.5"/>
@@ -219,8 +222,7 @@ function ResourceCard({ r }: { r: Resource }) {
       {r.status === 'available' && r.href ? (
         <a
           href={r.href}
-          target="_blank"
-          rel="noopener noreferrer"
+          {...(r.download ? { download: true } : { target: '_blank', rel: 'noopener noreferrer' })}
           style={{
             marginTop: 'var(--sp-sm)',
             display: 'inline-flex', alignItems: 'center', gap: 6,
